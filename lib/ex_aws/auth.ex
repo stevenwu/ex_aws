@@ -190,7 +190,7 @@ defmodule ExAws.Auth do
 
   defp presigned_url_headers(url) do
     uri = URI.parse(url)
-    [{"host", uri.authority}]
+    [{"host", uri.authority}, {"Content-Type", "image/jpeg"}]
   end
 
   defp build_amz_query_params(service, datetime, config, expires) do
